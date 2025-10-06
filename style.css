@@ -1,0 +1,281 @@
+/* global css vars */
+:root {
+    --primary-bg-color: #4d4a58;
+    --secondary-bg-color: #787686;
+    --topbar-bg-color: rgb(163, 129, 170);
+    --text-color: azure;
+    --body-text-color: rgb(197, 195, 195);
+    --link-color: rgb(227, 195, 255);
+    --link-highlight-color: #a16969;
+}
+
+body {
+    background-color: var(--secondary-bg-color);
+    font-size: 16pt;
+    /* padding-left: 15%;
+    padding-right: 15%; */
+}
+h1 {
+    padding-left: 1%;
+    font-size: 32pt;
+}
+h2 {
+    font-size: 24pt;
+}
+
+a:hover {
+    color: var(--link-highlight-color)
+}
+
+/* top bar navigation */
+/* TODO:
+    * some kind of cute pixel art idk what it'll be or be for
+*/
+.topbar {
+    /* background-color: var(--secondary-bg-color); */
+}
+
+#bg-canvas {
+    image-rendering: pixelated;
+    position:fixed; 
+    top:0; 
+    left:0; 
+    z-index: -1; 
+    width: 100%; 
+    height: 100%;
+}
+
+.menu button {
+    font-size: 16pt;
+    border: none;
+    float: left;
+    color: var(--text-color);
+    background-color: var(--topbar-bg-color);
+    text-align: center;
+    padding: 14px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-weight: bold;
+}
+
+.menu button:hover {
+    background-color: var(--link-highlight-color);
+    color: black;
+}
+
+.menu button.active {
+    background-color: var(--topbar-bg-color);
+    color: var(--text-color);
+}
+
+/* main content */
+.main {
+    overflow:hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 10px;
+
+    margin-top: 0.75%;
+    margin-bottom: 1%;
+    
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 16px;
+    font-size: 15pt;
+}
+
+.main p {
+    color: var(--body-text-color);
+}
+
+.main h1 {
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-weight: bold;
+    color: var(--link-color);
+}
+
+/* body text */
+.text {
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+.inline-link a {
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 15pt;
+    text-decoration: none;
+    color: var(--link-color);
+}
+.inline-link a:visited {
+    color: var(--link-color);
+}
+.inline-link a:hover {
+    color: var(--link-highlight-color)
+}
+
+/* footer that will be placed on every page
+ TODO: 
+    * little divide pixel art that separates this from main element?
+    * socials & external links
+    * 
+*/
+.footer {
+    margin:auto;
+    width:15%;
+    text-align:center;
+    padding: 20px 20px;
+    background-color: rgb(148, 136, 175);
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 16px;
+    font-size: 16pt;
+}
+
+/* post stuff */
+.post-item {
+    font-size: 14pt;
+    border-top: 1px dotted;
+    border-bottom: 1px dotted;
+}
+.post-title {
+    text-decoration:none;
+    color: var(--link-color);
+}
+.post-timestamp {
+    font-size: 10pt;
+    color: rgb(43, 38, 43);
+}
+
+.project-title {
+    margin-top: 10px;
+    font-size: 18pt;
+    font-weight: bold;
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+}
+
+.project-item-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-item {
+    font-size: 14pt;
+    border: 5px;
+    border-color:rgb(43, 38, 43);
+    border-style: solid;
+    padding: 0px 5px 5px 5px;
+    background-color: rgb(100, 80, 114);
+}
+
+.project-item a {
+    color: var(--link-color);
+    font-family: 'Roboto Mono', 'Courier New', monospace;
+}
+
+.project-item a:hover {
+    color: var(--link-highlight-color);
+}
+
+.internal-project-grid {
+    display: flex;
+}
+
+.project-grid-item {
+    flex: 1;
+    padding: 10px;
+}
+
+.project-grid-item img {
+    max-width: 100%;
+    max-height: 250px;
+    display: block;
+    margin: auto;
+}
+
+.carousel {
+    width:100%;
+}
+.carousel-wrapper {
+    gap: 10px;
+    align-items:center;
+    justify-content:center;
+    display:flex;
+}
+
+.carousel-container {
+    height: auto;
+    width: 400px;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.carousel-item {
+    /* width: 100%; */
+    /* height: 100%; */
+    padding: 10px;
+    flex: 1 0 100%;
+    background-color: var(--secondary-bg-color);
+    color: var(--link-color);
+}
+
+.carousel-item img {
+    max-width: 100%;
+    max-height: 300px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.carousel-item p {
+    color:rgb(255, 255, 255);
+}
+
+.carousel-arrow {
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 15px;
+    height: auto;
+    background-color: var(--topbar-bg-color);
+    border: none;
+    font-size: 40pt;
+    padding: 0;
+    cursor: pointer;
+    transition: opacity 100ms;
+    min-width: 0;
+}
+
+.carousel-arrow:hover {
+    background-color: var(--link-highlight-color);
+}
+
+#carousel-arrow-prev {
+    left: 0;
+}
+
+#carousel-arrow-next {
+    right: 0;
+}
+
+.under-construction {
+    animation-name: colorful;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    @keyframes colorful {
+        0% {color: yellow};
+        100% {color: black};
+    }
+}

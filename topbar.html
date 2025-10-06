@@ -1,0 +1,19 @@
+<div class="topbar" id="topbar">
+    <div class="menu"> 
+        <!-- FIXME doing this manually sucks automate this somehow -->
+        <table>
+            <th><button id="path">visitor@clefalto ~ $</button></th>
+            <table id="topbar-item-list">
+                <th> <a href="about.html" id="about-button">/about</a> </th>
+                <th> <a href="games.html" id="games-button">/games</a> </th>
+                <th> <a href="projects.html" id="projects-button">/other_projects</a> </th>
+            </table>
+        </table>
+    </div>
+
+    <script>
+        let p = document.getElementById("path");
+        let pathname = location.pathname.replace(".html", "").replace("/index", "");
+        p.innerText = `visitor@clefalto ~${pathname} $`;
+    </script>
+</div>

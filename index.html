@@ -1,0 +1,55 @@
+<!-- 
+    i see you inspecting the elements. do me a favor and don't scroll down please
+-->
+<!DOCTYPE html>
+<html>
+    <!--
+        i hate html
+    -->
+    <head>
+        <title>clef</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta name="author" content="yours truly">
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script>
+            $.get("topbar.html", function(data){
+                $("#topbar-placeholder").replaceWith(data);
+            });
+        </script>
+        
+        <script src="content-changer.js"></script>
+        <script src="bg-effects.js" defer></script>
+    </head>
+    
+    <body>
+        <canvas id="bg-canvas"></canvas>
+        <div class="topbar" id="topbar">
+            <div class="menu"> 
+                <!-- FIXME doing this manually sucks automate this somehow -->
+                <table>
+                    <th><button href="index.html" id="path">visitor@clefalto ~ $</button></th>
+                    <table id="topbar-item-list">
+                        <th> <button id="about-button">/about</button> </th>
+                        <th> <button id="games-button">/games</button> </th>
+                        <th> <button id="projects-button">/other_projects</button> </th>
+                    </table>
+                </table>
+            </div>
+
+            <script>
+                let p = document.getElementById("path");
+                let pathname = location.pathname.replace(".html", "").replace("/index", "");
+                p.innerText = `visitor@clefalto ~${pathname} $`;
+            </script>
+        </div>
+        
+        <div class="main">
+            
+        </div>
+        
+        <div class="footer">
+            made with &lt3 by clef
+        </div>
+        
+    </body>
+</html>
