@@ -55,7 +55,7 @@ a:hover {
     padding: 14px 20px;
     cursor: pointer;
     text-decoration: none;
-    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-family: 'Courier New', monospace;
     font-weight: bold;
 }
 
@@ -92,7 +92,7 @@ a:hover {
 }
 
 .main h1 {
-    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-family: 'Courier New', monospace;
     font-weight: bold;
     color: var(--link-color);
 }
@@ -104,7 +104,7 @@ a:hover {
 }
 
 .inline-link a {
-    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-family: 'Courier New', monospace;
     font-weight: bold;
     font-size: 15pt;
     text-decoration: none;
@@ -155,7 +155,7 @@ a:hover {
     margin-top: 10px;
     font-size: 18pt;
     font-weight: bold;
-    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-family: 'Courier New', monospace;
 }
 
 .project-item-container {
@@ -175,7 +175,7 @@ a:hover {
 
 .project-item a {
     color: var(--link-color);
-    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-family: 'Courier New', monospace;
 }
 
 .project-item a:hover {
@@ -203,14 +203,14 @@ a:hover {
 }
 .carousel-wrapper {
     gap: 10px;
-    align-items:center;
+    align-items: center;
     justify-content:center;
     display:flex;
 }
 
 .carousel-container {
     height: auto;
-    width: 400px;
+    width: 600px;
     display: flex;
     list-style: none;
     margin: 0;
@@ -222,24 +222,40 @@ a:hover {
 }
 
 .carousel-item {
-    /* width: 100%; */
+    /* width: 100%;
     /* height: 100%; */
-    padding: 10px;
+    /* padding: 10px; */
     flex: 1 0 100%;
     background-color: var(--secondary-bg-color);
     color: var(--link-color);
 }
 
-.carousel-item img {
-    max-width: 100%;
-    max-height: 300px;
+.carousel-item-list {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel-item-list img {
+    width: 90%;
+    flex-shrink: 0;
     height: auto;
     display: block;
-    margin: auto;
+    align-self: center;
+    object-fit: contain;
 }
 
 .carousel-item p {
     color:rgb(255, 255, 255);
+}
+
+.carousel-item a {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--link-color);
+}
+
+.carousel-item a:hover {
+    color: var(--link-highlight-color)
 }
 
 .carousel-arrow {
@@ -250,6 +266,7 @@ a:hover {
     background-color: var(--topbar-bg-color);
     border: none;
     font-size: 40pt;
+    font-family: 'Roboto Mono', 'Courier New', monospace;
     padding: 0;
     cursor: pointer;
     transition: opacity 100ms;
