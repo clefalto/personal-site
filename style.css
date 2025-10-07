@@ -266,7 +266,7 @@ a:hover {
     background-color: var(--topbar-bg-color);
     border: none;
     font-size: 40pt;
-    font-family: 'Roboto Mono', 'Courier New', monospace;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     padding: 0;
     cursor: pointer;
     transition: opacity 100ms;

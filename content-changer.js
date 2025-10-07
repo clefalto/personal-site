@@ -23,6 +23,12 @@ function changeContentTo(html) {
     $.get(html, function(data) {
         $(".main").html(data);
     });
+
+    let p = document.getElementById("path");
+    let pathname = html.replace(".html", "").replace("home", "");
+    p.innerText = `visitor@clefalto ~/${pathname} $`;
+    document.title = `${html.replace(".html", "")} -- clefalto`;
+
 }
 
 changeContentTo("home.html");
