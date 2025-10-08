@@ -296,3 +296,14 @@ a:hover {
         100% {color: black};
     }
 }
+
+.blinking-text {
+    /* a character */
+    animation: blink-visibility 1s steps(1, start) infinite;
+}
+
+@keyframes blink-visibility {
+    50% {
+        visibility: hidden;
+    }
+}
