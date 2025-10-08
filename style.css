@@ -262,15 +262,15 @@ a:hover {
     margin-left: 0;
     margin-right: 0;
     border-radius: 15px;
-    height: auto;
+    /* height: auto; */
     background-color: var(--topbar-bg-color);
     border: none;
-    font-size: 40pt;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding: 0;
+    /* padding: 0; */
     cursor: pointer;
     transition: opacity 100ms;
-    min-width: 0;
+    /* min-width: 0; */
+    line-height: 0;
 }
 
 .carousel-arrow:hover {
@@ -299,6 +299,7 @@ a:hover {
 
 .blinking-text {
     /* a character */
+    visibility: visible;
     animation: blink-visibility 1s steps(1, start) infinite;
 }
 
