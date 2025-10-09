@@ -27,14 +27,6 @@ a:hover {
     color: var(--link-highlight-color)
 }
 
-/* top bar navigation */
-/* TODO:
-    * some kind of cute pixel art idk what it'll be or be for
-*/
-.topbar {
-    /* background-color: var(--secondary-bg-color); */
-}
-
 #bg-canvas {
     image-rendering: pixelated;
     position:fixed; 
