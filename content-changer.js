@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 function changeContentTo(html) {
-    $.get(html, function(data) {
+    $.get("content-pages/" + html, function(data) {
         $(".main").html(data);
     });
 
