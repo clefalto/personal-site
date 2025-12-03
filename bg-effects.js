@@ -22,6 +22,14 @@ function BigParticle(x, y, xVel, yVel, omega) {
     this.yVel = yVel;
     this.omega = omega;
     this.rot = 0; // ROTATION IN RADIANS
+    this.trails = []; 
+}
+
+function BigParticleTrail(x, y, rot) {
+    this.x = x;
+    this.y = y;
+    this.rot = rot;
+    this.transp = 1;
 }
 
 function init() {
@@ -32,8 +40,8 @@ function init() {
         particlePool.push(p);
     }
 
-    let bp = new BigParticle(10, 5, 2, 1, 0.05);
-    bigParticlePool.push(bp);
+    // let bp = new BigParticle(10, 5, 2, 1, 0.05);
+    // bigParticlePool.push(bp);
     
     window.requestAnimationFrame(draw);
 }
@@ -74,6 +82,13 @@ function drawBigParticle(p) {
     ctx.fill();
 }
 
+function handleBigParticleTrails(trailArray) {
+    for (let i = 0; i < trailArray.length; i++) {
+        let p = trailArray.at(i);
+        // finish later
+    }
+}
+
 function transformPoint(x, y, translateX, translateY, rotation) {
     let p = {};
     let translatedX = translateX - x;
@@ -110,8 +125,7 @@ function draw() {
     }
 
     // spawn big particle every 10 seconds
-    console.log(frameCount);
-    if (frameCount % 600 == 0) {
+    if (frameCount % 900 == 0) {
         spawnBigParticle();
     }
 
@@ -162,7 +176,6 @@ function updateParticlePositions() {
 }
 
 function spawnBigParticle() {
-    console.log("spawning big particlulate");
     // position it somewhere on the left or top side of the screen, going somewhere to the right and down
     let x = 0;
     let y = 0;
@@ -173,10 +186,15 @@ function spawnBigParticle() {
         y = Math.random() * canvas.height / 2;
     }
 
+    // OldRange = (OldMax - OldMin)  
+    // NewRange = (NewMax - NewMin)  
+    // NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin
+
+    // let xVel = Math.random() * 4 - 2;
     let xVel = Math.random() + 1;
     let yVel = Math.random() + 1;
     
-    let bp = new BigParticle(x, y, xVel, yVel, 0.1 * Math.random());
+    let bp = new BigParticle(x, y, xVel, yVel, 0.1 * Math.random() + 0.025);
     bigParticlePool.push(bp);
 }
 
