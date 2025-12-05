@@ -3,6 +3,12 @@
 let currentContent = "home"; // content will be Home by default
 let typing = '';
 
+let content_names = [
+    'about',
+    'games',
+    'other_projects'
+]
+
 window.addEventListener('DOMContentLoaded', () => {
     var script = document.createElement('script');
     script.src = "//code.jquery.com/jquery.min.js";
@@ -16,7 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
     homeButton.addEventListener('click', () => {changeContentTo("home.html")})
     aboutButton.addEventListener('click', () => {changeContentTo("about.html")});
     gamesButton.addEventListener('click', () => {changeContentTo("games.html")});
-    projectsButton.addEventListener('click', () => {changeContentTo("projects.html")});
+    projectsButton.addEventListener('click', () => {changeContentTo("other_projects.html")});
 
     document.addEventListener('keydown', function(event) {
         if (event.key.length == 1) {
@@ -24,6 +30,19 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         else if (event.key == 'Backspace' && typing.length > 0) {
             typing = typing.substring(0, typing.length - 1);
+        }
+        // silly directory hopping thing
+        // not actually using user input here, just matching what they've typed to the known subpages
+        else if (event.key == 'Enter' && typing.length > 0) {
+            // check if what they've typed matches any of the subpages
+            for (let i in content_names) {
+                if (typing == content_names[i]) {
+                    changeContentTo(content_names[i] + ".html");
+                }
+            }
+            if (typing == ".." || typing == "home" || typing == "index"){
+                changeContentTo("home.html");
+            }
         }
 
         let p = document.getElementById('path');
