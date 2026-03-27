@@ -46,7 +46,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         let p = document.getElementById('path');
-        p.innerHTML = `visitor@clefalto ~/${currentContent} $ ${typing}<span class="blinking-text">_</span>`;
+        p.innerHTML = `portfolio@garett_hammerle ~/${currentContent} $ ${typing}<span class="blinking-text">_</span>`;
     });
 
     changeContentTo("home.html");
@@ -58,9 +58,11 @@ function changeContentTo(html) {
         $(".main").html(data);
     });
 
+    document.getElementById("content-title").textContent = html
+
     let p = document.getElementById("path");
     let pathname = html.replace(".html", "").replace("home", "");
-    p.innerHTML = `visitor@clefalto ~/${pathname} $ <span class="blinking-text">_</span>`;
+    p.innerHTML = `portfolio@garett_hammerle ~/${pathname} $ <span class="blinking-text">_</span>`;
     currentContent = pathname;
     typing = "";
 

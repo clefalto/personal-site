@@ -2,18 +2,20 @@
 :root {
     --primary-bg-color: #4d4a58;
     --secondary-bg-color: #787686;
-    --topbar-bg-color: rgb(163, 129, 170);
+    --tertiary-bg-color: #35343b;
+    --topbar-bg-color: #a381aa;
     --text-color: azure;
     --body-text-color: rgb(197, 195, 195);
-    --link-color: rgb(227, 195, 255);
+    --link-color: #e3c3ff;
     --link-highlight-color: #a16969;
 }
 
 body {
     background-color: var(--secondary-bg-color);
     font-size: 16pt;
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 18%;
+    padding-right: 18%;
+    padding-bottom: 1%
 }
 h1 {
     padding-left: 1%;
@@ -37,10 +39,16 @@ a:hover {
     height: 100%;
 }
 
-.menu button {
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.topbar-item-list button {
     font-size: 16pt;
     border: none;
-    float: left;
+    /* float: left; */
     color: var(--text-color);
     background-color: var(--topbar-bg-color);
     text-align: center;
@@ -49,6 +57,7 @@ a:hover {
     text-decoration: none;
     font-family: 'Courier New', monospace;
     font-weight: bold;
+    width: 100%;
 }
 
 .menu button:hover {
@@ -61,15 +70,53 @@ a:hover {
     color: var(--text-color);
 }
 
+.topbar-item-list {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.topbar-title {
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 1%;
+}
+
+.topbar-title button { /* always a button */
+    font-size: 24pt;
+    border: none;
+    color: var(--text-color);
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    /* width: 100% */
+}
+
+.topbar {
+    /* margin-top: 3%; */
+}
+
+/* 
+.menu table {
+    table-layout: auto;
+    width: 100%;
+    border-spacing: 2px;
+} */
+
 /* main content */
 .main {
     overflow:hidden;
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-bottom: 10px;
+    /* padding-left: 16px;
+    padding-right: 16px; */
+    padding-bottom: 2%;
 
-    margin-top: 0.75%;
+    /*
+    margin-top: 0.75%; 
     margin-bottom: 1%;
+    */
     
     background-color: var(--primary-bg-color);
     color: var(--text-color);
@@ -77,6 +124,10 @@ a:hover {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 16px;
     font-size: 15pt;
+
+    padding-left: 5%;
+    padding-right: 5%;
+    
 }
 
 .main p {
@@ -89,10 +140,45 @@ a:hover {
     color: var(--link-color);
 }
 
+
+.content-container {
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+    margin-top: 1%;
+    margin-bottom: 1%;
+    /*
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 10px;
+    padding-top: 10px; */
+    border: 1px solid var(--topbar-bg-color);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.content-title {
+    border: 1px solid var(--topbar-bg-color); 
+    padding: 5px; 
+    font-weight: bold; 
+    font-family: 'Courier New', Courier, monospace;
+    background-color: var(--tertiary-bg-color);
+    display: flex;
+    flex-direction: row;
+}
+
+.content-title-button {
+    margin-left: auto;
+    background-color: transparent;
+    border: transparent;
+}
+
+
 /* body text */
 .text {
-    padding-right: 3%;
-    padding-left: 3%;
+    padding-right: 1%;
+    padding-left: 1%;
 }
 
 .inline-link a {
@@ -109,6 +195,18 @@ a:hover {
     color: var(--link-highlight-color)
 }
 
+.inline-link-button {
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 15pt;
+    text-decoration: none;
+    color: var(--link-color);
+    background-color: transparent;
+    border: transparent;
+    cursor: pointer;
+    user-select: text;
+}
+
 /* footer that will be placed on every page
  TODO: 
     * little divide pixel art that separates this from main element?
@@ -120,7 +218,7 @@ a:hover {
     width:15%;
     text-align:center;
     padding: 20px 20px;
-    background-color: rgb(148, 136, 175);
+    background-color: var(--secondary-bg-color);
     color: var(--text-color);
     text-decoration: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;

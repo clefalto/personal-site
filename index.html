@@ -14,7 +14,6 @@
         <meta name="author" content="yours truly">
         <script src="//code.jquery.com/jquery.min.js"></script>
         <script> 
-            // this doesn't do anything right meow
             $.get("topbar.html", function(data){
                 $("#topbar-placeholder").replaceWith(data);
             });
@@ -27,16 +26,26 @@
     <body>
         <canvas id="bg-canvas"></canvas>
         <div class="topbar" id="topbar">
-            <div class="menu"> 
-                <!-- FIXME doing this manually sucks automate this somehow -->
+            <!-- <div class="menu"> 
                 <table>
                     <th><button href="index.html" id="path">visitor@clefalto ~ $<span class="blinking-text">_</span></button></th>
                     <table id="topbar-item-list">
-                        <th> <button id="about-button">/about</button> </th>
-                        <th> <button id="games-button">/games</button> </th>
-                        <th> <button id="projects-button">/other_projects</button> </th>
+                        <td> <button id="about-button">/about</button> </th>
+                        <td> <button id="games-button">/games</button> </th>
+                        <td> <button id="projects-button">/other_projects</button> </th>
                     </table>
                 </table>
+            </div> -->
+
+            <div class="menu"> 
+                <div class="topbar-title">
+                    <button href="index.html" id="path">visitor@clefalto ~ $<span class="blinking-text">_</span></button> 
+                </div>
+                <div class="topbar-item-list">
+                    <button id="about-button">/about</button>
+                    <button id="games-button">/games</button>
+                    <button id="projects-button">/other_projects</button>
+                </div>
             </div>
 
             <script>
@@ -46,12 +55,21 @@
             </script>
         </div>
         
-        <div class="main">
+        <div class="content-container">
+            <div class="content-title">
+                <div id="content-title">home.html</div>
+                <button class="content-title-button" onclick="changeContentTo('home.html')"> <!-- changeContentTo() is in content-changer.js, which we loaded earlier -->
+                    <img src="img/logos-and-ui/x_button.png">
+                </button>
+            </div>
+
+            <div class="main" style="border:1px solid var(--topbar-bg-color)">
             
+            </div>
         </div>
         
         <div class="footer">
-            made with &lt3 by clef
+            made with &lt3 by garett hammerle
         </div>
         
     </body>

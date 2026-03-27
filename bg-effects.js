@@ -11,8 +11,8 @@ const CELL_SIZE = 4; // 4px
 function Particle(x, y, xVel, yVel) {
     this.x = x;
     this.y = y;
-    this.xVel = (-1 + Math.random() * 2);
-    this.yVel = (-1 + Math.random() * 2);
+    this.xVel = (-1 + Math.random() * 2) / 8;
+    this.yVel = (-1 + Math.random() * 2) / 8;
 }
 
 function BigParticle(x, y, xVel, yVel, omega) {
@@ -144,7 +144,7 @@ function updateParticlePositions() {
 
 
         p.x += p.xVel + 1;
-        p.y += p.yVel + 0.25 + Math.sin(0.001 * Date.now() + Math.PI/4 * i);
+        p.y += p.yVel + 0.25 + Math.sin(0.0001 * Date.now() + Math.PI/3 * i);
 
         // boundary checks
         if (p.x > canvas.width) {

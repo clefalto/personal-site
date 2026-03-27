@@ -18,7 +18,7 @@
     border: 5px;
     border-color:rgb(43, 38, 43);
     border-style: solid;
-    padding: 0px 15px 5px 15px;
+    padding: 0px 15px 15px 15px;
     background-color: rgb(100, 80, 114);
 }
 
@@ -41,6 +41,13 @@
 }
 
 .project-grid-item img {
+    max-width: 100%;
+    max-height: 250px;
+    display: block;
+    margin: auto;
+}
+
+.project-grid-item iframe {
     max-width: 100%;
     max-height: 250px;
     display: block;
