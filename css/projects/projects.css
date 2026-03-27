@@ -53,3 +53,10 @@
     display: block;
     margin: auto;
 }
+
+.project-grid-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 3%;
+    margin-bottom: 15px; /* hacky solution */
+}
