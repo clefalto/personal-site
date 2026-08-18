@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <!--
+        i LOVE html
+    -->
+    <head>
+        <title>about</title>
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+        <link rel="stylesheet" type="text/css" href="/css/projects/projects.css">
+        <link rel="stylesheet" type="text/css" href="/css/projects/carousel.css">
+        <meta name="author" content="yours truly">
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script> 
+            $.get("/topbar.html", function(data){
+                $("#topbar-placeholder").replaceWith(data);
+            });
+        </script>
+    </head>
+    
+    <body>
+        <canvas id="bg-canvas"></canvas>
+        <div id="topbar-placeholder"></div>
+
+        
+        <div class="content-container">
+            <!-- <div class="content-title">
+                <div id="content-title">home.html</div>
+                <a class="content-title-button" href="/"> 
+                    <img src="/img/logos-and-ui/x_button.png">
+                </a>
+            </div> -->
+
+            <div class="main" style="border:1px solid var(--topbar-bg-color)">
+                <h1>about me</h1>
+                <div class="text">
+                    <h2>programmer by day, game developer typically also by day</h2>
+                    <div style="display:flex">
+                        <div>
+                            <p>I will be talking about myself here, so if that doesn't interest you then feel free to head straight to the games or projects page.</p>
+                            <p>I'm Garett, a programmer and hobbyist game developer from southern California. I've been fascinated by computers and games my whole life, so much so that I spent 
+                                four years getting a degree in computer science (class of 2025!). Currently, I'm working towards a masters degree in computer science, 
+                                which I only have a few months left for!</p>
+                                <p>During my undergrad, I was heavily involved with the game dev club on campus. I was the treasurer for one year and collaborated with other members on a whole bunch of games!</p>
+                            <p>I don't have a lot of projects on here (yet), but I hope to keep it updated with pretty much every project I get to a showable state. Some may be unfinished. They can't all be winners.</p>
+                            <p>Topics that interest me the most are computer graphics, game design, embedded systems, and education.</p>
+                            <p>In my free time, I like hiking, traveling, cooking, and baking (in that order). I'm also learning guitar, and want to pick up learning art as well.</p>
+                        </div>
+                    
+                        <!-- <div style="display: flex; flex-direction: column; margin-left: 10%; margin-right: 10%">
+                            <img src="img/logos-and-ui/clef-logo.gif" style="width: fit-content; margin: auto">
+                            <p style="text-align:center">my logo (which I totally use all over the place)</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+

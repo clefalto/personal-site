@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PLACE HOLDER</title>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/projects/projects.css">
+        <link rel="stylesheet" type="text/css" href="css/projects/carousel.css">
+        <meta name="author" content="yours truly">
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script> 
+            $.get("topbar.html", function(data){
+                $("#topbar-placeholder").replaceWith(data);
+            });
+        </script>
+    </head>
+    
+    <body>
+        <canvas id="bg-canvas"></canvas>
+        <div id="topbar-placeholder"></div>
+        
+        <div class="content-container">
+            <div class="content-title">
+                <div id="content-title">home.html</div>
+                <button class="content-title-button" onclick="changeContentTo('home.html')"> <!-- changeContentTo() is in content-changer.js, which we loaded earlier -->
+                    <img src="img/logos-and-ui/x_button.png">
+                </button>
+            </div>
+
+            <div class="main" style="border:1px solid var(--topbar-bg-color)">
+                <h1>welcome to my website</h1>
+                <div class="text">
+                    [TEXT] lauren gypsum or whatever
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            made with &lt3 by garett hammerle
+        </div>
+        
+    </body>
+</html>

@@ -9,7 +9,7 @@ let content_names = [
     'other_projects'
 ]
 
-window.addEventListener('DOMContentLoaded', () => {
+// window.addEventListener('DOMContentLoaded', () => {
     var script = document.createElement('script');
     script.src = "//code.jquery.com/jquery.min.js";
     document.getElementsByTagName('head')[0].appendChild(script);
@@ -19,10 +19,10 @@ window.addEventListener('DOMContentLoaded', () => {
     const gamesButton = document.getElementById("games-button");
     const projectsButton = document.getElementById("projects-button");
 
-    homeButton.addEventListener('click', () => {changeContentTo("home.html")})
-    aboutButton.addEventListener('click', () => {changeContentTo("about.html")});
-    gamesButton.addEventListener('click', () => {changeContentTo("games.html")});
-    projectsButton.addEventListener('click', () => {changeContentTo("other_projects.html")});
+    homeButton.addEventListener('click', () => {changeContentTo("")})
+    aboutButton.addEventListener('click', () => {changeContentTo("/about")});
+    gamesButton.addEventListener('click', () => {changeContentTo("/games")});
+    projectsButton.addEventListener('click', () => {changeContentTo("/other_projects")});
 
     document.addEventListener('keydown', function(event) {
         if (event.key.length == 1) {
@@ -37,11 +37,11 @@ window.addEventListener('DOMContentLoaded', () => {
             // check if what they've typed matches any of the subpages
             for (let i in content_names) {
                 if (typing == content_names[i]) {
-                    changeContentTo(content_names[i] + ".html");
+                    changeContentTo(content_names[i]);
                 }
             }
             if (typing == ".." || typing == "home" || typing == "index"){
-                changeContentTo("home.html");
+                changeContentTo("");
             }
         }
 
@@ -49,23 +49,24 @@ window.addEventListener('DOMContentLoaded', () => {
         p.innerHTML = `portfolio@garett_hammerle ~/${currentContent} $ ${typing}<span class="blinking-text">_</span>`;
     });
 
-    changeContentTo("home.html");
-});
+    // changeContentTo("/");
+// });
 
 
-function changeContentTo(html) {
-    $.get("content-pages/" + html, function(data) {
-        $(".main").html(data);
-    });
+function changeContentTo(path) {
+    // $.get("content-pages/" + html, function(data) {
+    //     $(".main").html(data);
+    // });
 
-    document.getElementById("content-title").textContent = html
+    // document.getElementById("content-title").textContent = html
 
-    let p = document.getElementById("path");
-    let pathname = html.replace(".html", "").replace("home", "");
-    p.innerHTML = `portfolio@garett_hammerle ~/${pathname} $ <span class="blinking-text">_</span>`;
-    currentContent = pathname;
-    typing = "";
+    // let p = document.getElementById("path");
+    // let pathname = html.replace(".html", "").replace("home", "");
+    // p.innerHTML = `portfolio@garett_hammerle ~/${pathname} $ <span class="blinking-text">_</span>`;
+    // currentContent = pathname;
+    // typing = "";
 
-    document.title = `${html.replace(".html", "")} -- clefalto`;
+    // document.title = `${html.replace(".html", "")} -- clefalto`;
+
+    window.location.href = path;
 }
-

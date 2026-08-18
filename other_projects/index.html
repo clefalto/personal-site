@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>other projects</title>
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+        <link rel="stylesheet" type="text/css" href="/css/projects/projects.css">
+        <link rel="stylesheet" type="text/css" href="/css/projects/carousel.css">
+        <meta name="author" content="yours truly">
+        <script src="//code.jquery.com/jquery.min.js"></script>
+        <script> 
+            $.get("/topbar.html", function(data){
+                $("#topbar-placeholder").replaceWith(data);
+            });
+        </script>
+
+        <!-- <script src="/content-changer.js"></script> -->
+    </head>
+    
+    <body>
+        <canvas id="bg-canvas"></canvas>
+        <div id="topbar-placeholder"></div>
+        
+        <div class="content-container">
+            <!-- <div class="content-title">
+                <div id="content-title">home.html</div>
+                <a class="content-title-button" href="/"> 
+                    <img src="/img/logos-and-ui/x_button.png">
+                </a>
+            </div> -->
+
+            <div class="main" style="border:1px solid var(--topbar-bg-color)">
+                <h1>projects</h1>
+                <div class="text">
+                    <div class="project-item-container">
+                        <div class="project-item">
+                            <div class="project-title">this website</div>
+                            <p>I made this website using pure html, javascript and css.</p>
+                            <p>this is the first website I've actually finished, but not the first one I've made. it's mainly just for me to show off the cool stuff I've made in my time on this earth! 
+                                I hope what you find on here brings you joy or happiness or some other emotion that means something to you.</p>
+                            <p>I plan to continue adding content to this site so please I encourage you to check back some other time, something might be different :)</p>
+                            <p>future planned features: blog posts, wider variety of backgrounds, form submission</p>
+                            <p><strong>langs & frameworks: </strong>HTML, CSS, JavaScript</p>
+                            <p><strong>state: </strong>constant flux</p>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="project-title">SPRIGHT autoscaler</div>
+                            <div class="internal-project-grid">
+                                <div class="project-grid-item">
+                                    <p>masters course project in which we extended an experimental serverless cloud framework to add autoscaling.</p>
+                                    <p>SPRIGHT is a serverless computing cloud framework made by a past PhD student of one of my professors. it acts as a very efficient dataplane but 
+                                        doesn't add any control plane functionality in its original form. for a course project, a classmate and I added autoscaling to it.</p>
+                                    <p>this was a relatively short project (we had about 7 weeks to work on it) but we accomplished a lot in that timeframe. I was learning cloud computing 
+                                        (kubernetes, prometheus, SPRIGHT itself) as I went, and managed to get pretty familiar with it.</p>
+                                    <p>see the video to the right for a demo.</p>
+                                    <p><strong>langs & frameworks: </strong>Kubernetes, Prometheus, eBPF</p>
+                                    <p><strong>state: </strong>good grade :) (finished)</p>
+                                    <a href="https://github.com/simone07734/spright" target="_blank" rel="noopener noreferrer">[view it here]</a>
+                                </div>
+                                <div class="project-grid-item">
+                                    <div>
+                                        <iframe width="467" height="263" src="https://www.youtube.com/embed/mzcUqljqZ9g?si=iSKC_tCeu1MITMj4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-title">scotty finance</div>
+                            <div class="internal-project-grid">
+                                <div class="project-grid-item">
+                                    <p>course project made in a group of four other students. this project is essentially a finance tracker where the user can input their expenses day by day and receive a summary.</p>
+                                    <p>my work for this was implementing almost all of the server-side functionality, including a database for user info validation and storing their data. I also made an API and various unit tests for the database.</p>
+                                    <p>this project is just a github repository right now, and probably will be for the forseeable future, as we have no desire to continue working on it.</p>
+                                    <p><strong>langs & frameworks: </strong>HTML, JavaScript, MySQL</p>
+                                    <p><strong>state: </strong>indefinite hiatus</p>
+                                    <a href="https://github.com/mrini01/Scotty_Finance" target="_blank" rel="noopener noreferrer">[view it here]</a>
+                                </div>
+                                <div class="project-grid-item">
+                                    <img src="img/project-splashes/scobbyfinancials.jpeg">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-item">
+                            <div class="project-title">drizzle planet</div>
+                            <div class="internal-project-grid">
+                                <div class="project-grid-item">
+                                    <p>course project for computer animation! worked with one other student over about 8 weeks for this project.</p>
+                                    <p>our goal was to use procedural animation like inverse kinematics and simple algorithmic decision-making to create convincing 2D creature behavior.</p>
+                                    <p>we were inspired by the game Rain World (specifically, <a href="https://youtu.be/sVntwsrjNe4?si=DSogKj1gwmYHcV_f" target="_blank" rel="noopener noreferrer">this</a> GDC talk)</p>
+                                    <p>we made a few different creatures that move toward a target in different ways. I learned a lot about how to use inverse kinematics and how to use simple conditions to create complex-looking behaviors.</p>
+                                    <p>this project was just for this one course and for learning, we don't have any plans to finish it!</p>
+                                    <p><strong>langs & frameworks: </strong>Godot</p>
+                                    <p><strong>state: </strong>unfinished prototype</p>
+                                    <a href="https://github.com/clefalto/cs231_final-project" target="_blank" rel="noopener noreferrer">[view it here]</a>
+                                </div>
+                                <div class="project-grid-vertical">
+                                    <div class="project-grid-item">
+                                        <iframe width="467" height="263" src="https://www.youtube.com/embed/nOMK2PLkY84?si=H1-V1nGJtF6lBfeB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="project-grid-item">
+                                        <iframe width="467" height="263" src="https://www.youtube.com/embed/70e-aPzfAHA?si=AZTrWYMaPfOwplZm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+

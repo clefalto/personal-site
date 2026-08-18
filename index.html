@@ -1,45 +1,33 @@
-<!-- 
-    i see you inspecting the elements. do me a favor and don't scroll down please
--->
 <!DOCTYPE html>
 <html>
     <!--
-        i hate html
+        i LOVE html
     -->
     <head>
-        <title>clef</title>
-        <link rel="stylesheet" type="text/css" href="css/main.css">
-        <link rel="stylesheet" type="text/css" href="css/projects/projects.css">
-        <link rel="stylesheet" type="text/css" href="css/projects/carousel.css">
+        <title>home - earlyham</title>
+        <link rel="stylesheet" type="text/css" href="/css/main.css">
+        <link rel="stylesheet" type="text/css" href="/css/projects/projects.css">
+        <link rel="stylesheet" type="text/css" href="/css/projects/carousel.css">
         <meta name="author" content="yours truly">
         <script src="//code.jquery.com/jquery.min.js"></script>
         <script> 
-            $.get("topbar.html", function(data){
+            $.get("/topbar.html", function(data){
                 $("#topbar-placeholder").replaceWith(data);
             });
         </script>
         
-        <script src="content-changer.js"></script>
-        <script src="bg-effects.js" defer></script>
+        <!-- <script src="/content-changer.js"></script> -->
+        <!-- <script src="bg-effects.js" defer></script> -->
+         <!-- <script src="/gol.js" defer></script> -->
     </head>
     
     <body>
         <canvas id="bg-canvas"></canvas>
-        <div class="topbar" id="topbar">
-            <!-- <div class="menu"> 
-                <table>
-                    <th><button href="index.html" id="path">visitor@clefalto ~ $<span class="blinking-text">_</span></button></th>
-                    <table id="topbar-item-list">
-                        <td> <button id="about-button">/about</button> </th>
-                        <td> <button id="games-button">/games</button> </th>
-                        <td> <button id="projects-button">/other_projects</button> </th>
-                    </table>
-                </table>
-            </div> -->
-
+        <div id="topbar-placeholder"></div>
+        <!-- <div class="topbar" id="topbar">
             <div class="menu"> 
                 <div class="topbar-title">
-                    <button href="index.html" id="path">visitor@clefalto ~ $<span class="blinking-text">_</span></button> 
+                    <button href="/" id="path">visitor@clefalto ~ $<span class="blinking-text">_</span></button> 
                 </div>
                 <div class="topbar-item-list">
                     <button id="about-button">/about</button>
@@ -49,28 +37,65 @@
             </div>
 
             <script>
-                // let p = document.getElementById("path");
-                // let pathname = location.pathname.replace(".html", "").replace("/index", "");
+                let p = document.getElementById("path");
+                let pathname = location.pathname.replace(".html", "").replace("/index", "");
                 // p.innerText = `visitor@clefalto ~${pathname} $`;
             </script>
-        </div>
+        </div> -->
         
         <div class="content-container">
-            <div class="content-title">
-                <div id="content-title">home.html</div>
-                <button class="content-title-button" onclick="changeContentTo('home.html')"> <!-- changeContentTo() is in content-changer.js, which we loaded earlier -->
-                    <img src="img/logos-and-ui/x_button.png">
-                </button>
-            </div>
+            <!-- <div class="content-title">
+                <div id="content-title">index</div>
+                <a class="content-title-button" href="/"> 
+                    <img src="/img/logos-and-ui/x_button.png">
+                </a>
+            </div> -->
 
             <div class="main" style="border:1px solid var(--topbar-bg-color)">
-            
+                <h1>welcome to my website</h1>
+                <div class="text">
+                    <p>Hello! My name is <span style="font-weight: bold">Garett Hammerle</span> (hammer-LEE) and I am a programmer and hobbyist game developer from California. You've made it to my professional portfolio website, which shows off a lot of the projects 
+                        I've worked on in the past. I hope you enjoy your stay!</p>
+                    <p>You can find a list of games I've made under <button class="inline-link-button" onclick="changeContentTo('games.html')">/games</button>, 
+                        and other miscellaneous programming projects at <button class="inline-link-button" onclick="changeContentTo('other_projects.html')">/other_projects</button>. If you're curious about me, the mysterious author, 
+                        then you can visit <button class="inline-link-button" onclick="changeContentTo('about.html')">/about</button>.</p>
+                    <!-- FIXME fix links to load the corresponding content -->        
+                    <h2 style="text-align: center">featured projects</h2>
+                    <div class="carousel">
+                        <div class="carousel-wrapper">
+                            <button class="carousel-arrow" id="carousel-arrow-prev">
+                                <img src="img/logos-and-ui/left-arrow-soretro.png" style="padding: 5px">
+                            </button>
+                        
+                            <ul class="carousel-container" id="carousel-container">
+                                <li class="carousel-item">
+                                    <div class="carousel-item-list">
+                                        <img src="img/project-splashes/proximal_gameplay.png">
+                                        <div class="project-title">proximal</div>
+                                        <p>infinite arena fps, senior project</p>
+                                        <a href="https://altoclef.itch.io/proximal" target="_blank" rel="noopener noreferrer">[check it out]</a>
+                                    </div>
+                                </li>
+                                <li class="carousel-item">
+                                    <div class="carousel-item-list">
+                                        <!-- <img src="img/project-splashes/this-website.png"> -->
+                                        <iframe src="index.html" width="90%" height="1200" style="zoom: 0.25; align-self: center"></iframe>
+                                        <div class="project-title">this website</div>
+                                        <p>you're on it! right now! good job!</p>
+                                    </div>
+                                </li>
+                            </ul>
+                
+                            <button class="carousel-arrow" id="carousel-arrow-next">
+                                <img src="img/logos-and-ui/right-arrow-soretro.png" style="padding: 5px">
+                            </button>
+                        </div>
+                
+                        <script src="carousel.js" defer></script>
+                    </div>
+                    
+                </div>
             </div>
         </div>
-        
-        <div class="footer">
-            made with &lt3 by garett hammerle
-        </div>
-        
     </body>
 </html>
